@@ -1,0 +1,82 @@
+﻿@using kekes.Services
+@model kekes.Data.Models.Post
+@inject IUserPermissionsService UserPermissions
+@{
+    ViewData["Title"] = "Details";
+    var canEditPost = UserPermissions.CanEditPost(this.Model);
+}
+
+
+<div class="blog-post-details">
+    <h1>@Model.Name</h1>
+    <div class="blog-post-info">
+        @Model.User.UserName | @Model.Section.Name | @Model.Created
+        @if (canEditPost)
+        {
+            <text>|</text> <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+            <text>|</text> <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+        }
+    </div>
+
+    <div class="blog-post-text">@Model.Text</div>
+</div>
+
+<h3>Attachments</h3>
+
+@if (canEditPost)
+{
+    <p>
+        <a asp-action="Create" asp-controller="PostAttachments" asp-route-postId="@Model.Id" class="btn btn-default">Create New</a>
+    </p>
+}
+@if (Model.Attachments != null)
+{
+    <div class="row">
+        @foreach (var item in Model.Attachments?.OrderByDescending(x => x.Created))
+        {
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="@item.Path" alt="Image" />
+                    @if (canEditPost)
+                    {
+                        <div class="caption">
+                            <p><a asp-action="Delete" asp-controller="PostAttachments" asp-route-id="@item.Id" class="btn btn-danger">Delete</a></p>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<h3>Comments</h3>
+
+<form method="post" asp-action="AddComment">
+    <input name="Text" class="form-control" />
+    <input name="PostId" value="@Model.Id" class="form-control" type="hidden" />
+    <div class="form-group">
+        <input type="submit" value="Add comment" class="btn btn-primary" />
+    </div>
+</form>
+
+<div class="blog-posts">
+    <div class="blog-posts-items">
+        @foreach (var item in Model.Comments.OrderByDescending(x => x.Created))
+        {
+            <div class="blog-post panel panel-default">
+                <div class="panel-heading">
+                    <div>@item.User.UserName | @item.Created
+                        @if (UserPermissions.CanEditPostComment(item))
+                        {
+                            <text>| <a asp-action="Edit" asp-controller="PostComments" asp-route-id="@item.Id">Edit</a></text>
+                            <text>| <a asp-action="Delete" asp-controller="PostComments" asp-route-id="@item.Id">Delete</a></text>
+                        }
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="blog-post-text">@item.Text</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

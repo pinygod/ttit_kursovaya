@@ -1,0 +1,39 @@
+@model kekes.Data.Models.PostAttachment
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete attachment</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            File
+        </dt>
+        <dd>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="@Model.Path" alt="Image"/>
+                    </div>
+                </div>
+            </div>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Details" asp-controller="Posts">Back to Post</a>
+        </div>
+    </form>
+</div>

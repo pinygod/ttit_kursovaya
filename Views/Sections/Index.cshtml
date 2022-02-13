@@ -1,0 +1,50 @@
+﻿@model SectionsIndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="mainContainer col-9 p-2 border rounded ">
+    <h4 class="text-light">Популярные разделы</h4>
+
+    <table class="table rounded" id="OrderPopularPosts">
+        <tbody>
+    @foreach (var item in Model.PopularSections) {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="text-dark">@Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+                <td>
+                    <p class="m-0 p-0 text-end">@Html.DisplayFor(modelItem => @item.Posts.Count)</p>
+                </td>
+            </tr>
+}
+        </tbody>
+    </table>
+
+    <h4 class="text-light">Последние обновленные разделы</h4>
+    
+    <table class="table rounded" id="OrderUpdatedPosts">
+        <tbody>
+    @foreach (var item in Model.RecentSections) {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="text-dark">@Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+                 <td>
+                    <p class="m-0 p-0 text-end">@Html.DisplayFor(modelItem => @item.Posts.Count)</p>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
+<div class="col-1 d-flex"></div>
+<div class="mainContainer col-2 p-2 border rounded d-flex align-self-start">
+   <h6 class="text-light text-center w-100">Объявления</h6>
+   
+</div>
+
+
+
+

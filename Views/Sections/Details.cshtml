@@ -1,0 +1,29 @@
+﻿@model SectionDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.SectionName</h1>
+
+<p>
+    <a asp-action="Create" asp-controller="Posts" asp-route-sectionId="@Model.SectionId">Create new post</a>
+</p>
+
+<table class="table">
+    <tbody>
+@foreach (var item in Model.Posts) {
+        <tr>
+            <td>
+                <a asp-action="Details" asp-controller="Posts" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
