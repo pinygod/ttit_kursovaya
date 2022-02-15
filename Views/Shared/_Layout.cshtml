@@ -15,8 +15,8 @@
 <body>
     <header>
         <nav class="navbar navbar-dark bg-dark navbar-expand-sm navbar-toggleable-sm mb-3">
-            <div class="container-fluid">   
-                <img src="/img/eye.png" class="logo position-absolute pb-2"/>
+            <div class="container-fluid">
+                <img src="/img/eye.png" class="logo position-absolute pb-2" />
                 <a class="siteName navbar-brand ms-5 ps-4" asp-area="" asp-controller="Sections" asp-action="Index"><h2>Gaming Forum</h2></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
                         </li>
                         @*<li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>*@
+                            </li>*@
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -41,14 +41,15 @@
             @RenderBody()
         </main>
     </div>
-@*
-    <footer class="footer text-light mt-3">
+    @*
+        <footer class="footer text-light mt-3">
         <div class="container">
-            &copy; 2022 - kekes - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-light">Privacy</a>
+        &copy; 2022 - kekes - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-light">Privacy</a>
         </div>
-    </footer>*@
+        </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/signalr/dist/browser/signalr.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

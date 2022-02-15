@@ -12,6 +12,8 @@ using kekes.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using kekes.Services;
+using kekes.Hubs;
+using Microsoft.AspNetCore.SignalR;
 
 namespace kekes.Controllers
 {
@@ -20,12 +22,14 @@ namespace kekes.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IUserPermissionsService _userPermissions;
+        private readonly IHubContext<NotificationHub> _hubContext;
 
-        public PostsController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IUserPermissionsService userPermissions)
+        public PostsController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IUserPermissionsService userPermissions, IHubContext<NotificationHub> hubContext)
         {
             _context = context;
             _userManager = userManager;
             _userPermissions = userPermissions;
+            _hubContext = hubContext;
         }
 
         // GET: Posts
@@ -94,6 +98,9 @@ namespace kekes.Controllers
                 };
                 _context.Add(post);
                 await _context.SaveChangesAsync();
+
+                await _hubContext.Clients.All.SendAsync("displayNotification", $"Добавлен пост \"{post.Name}\" в разделе \"{section.Name}\"");
+
                 return RedirectToAction("Details", "Sections", new { id = model.SectionId });
             }
             return View(model);

@@ -1,5 +1,6 @@
 using kekes.Data;
 using kekes.Data.Models;
+using kekes.Hubs;
 using kekes.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUserPermissionsService, UserPermissionsService>();
+
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -44,6 +47,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Sections}/{action=Index}/{id?}");
 app.MapRazorPages();
+
+app.MapHub<NotificationHub>("/signalServer");
 
 var serviceProvider = builder.Services.BuildServiceProvider();
 
