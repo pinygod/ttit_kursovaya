@@ -70,8 +70,9 @@
     }
     else
     {
-        <text>Для возможности комментирования необходимо
-        <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Action("Details", "Posts", new { id = @Model.Id })">войти</a>
+        <text>
+            Для возможности комментирования необходимо
+            <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Action("Details", "Posts", new { id = @Model.Id })">войти</a>
         </text>
     }
 
@@ -86,8 +87,11 @@
                         <div class="text-end text-dark pe-3">
                             @if (UserPermissions.CanEditPostComment(item))
                             {
-                                <text><a asp-action="Edit" asp-controller="PostComments" asp-route-id="@item.Id" class="text-secondary">Редактировать</a></text>
-                                <text>| <a asp-action="Delete" asp-controller="PostComments" asp-route-id="@item.Id" class="text-secondary">Удалить</a></text>
+                                <form method="post" asp-action="DeleteComment" asp-controller="Posts" asp-route-id="@item.Id">
+                                    <div class="form-actions no-color">
+                                        <input type="submit" value="Удалить"/>
+                                    </div>
+                                </form>
                             }
                         </div>
                     </div>

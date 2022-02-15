@@ -237,6 +237,18 @@ namespace kekes.Controllers
             return RedirectToAction("Details", "Posts", new { id = model.PostId });
         }
 
+        [Authorize(Roles = ApplicationRoles.Administrators)]
+        [HttpPost, ActionName("DeleteComment")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteComment(Guid id)
+        {
+            var comment = await _context.Comments.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == id);
+
+            _context.Comments.Remove(comment);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Details", "Posts", new { id = comment.PostId });
+        }
+
         private bool PostExists(Guid id)
         {
             return _context.Posts.Any(e => e.Id == id);

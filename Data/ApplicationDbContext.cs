@@ -16,5 +16,6 @@ namespace kekes.Data
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<PostAttachment> PostAttachments { get; set; }
+        public DbSet<Announcement> Announcements { get; set; }
     }
 }

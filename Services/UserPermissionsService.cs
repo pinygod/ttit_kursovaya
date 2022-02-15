@@ -43,7 +43,7 @@ namespace kekes.Services
                 return true;
             }
 
-            return this.userManager.GetUserId(this.httpContextAccessor.HttpContext.User) == postComment.User.Id;
+            return false;
         }
     }
 }
