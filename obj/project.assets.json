@@ -9859,24 +9859,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ziang\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Alex\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\kekes.csproj",
+      "projectUniqueName": "C:\\Users\\Alex\\source\\repos\\ttit_kursovaya\\kekes.csproj",
       "projectName": "kekes",
-      "projectPath": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\kekes.csproj",
-      "packagesPath": "C:\\Users\\Ziang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\obj\\",
+      "projectPath": "C:\\Users\\Alex\\source\\repos\\ttit_kursovaya\\kekes.csproj",
+      "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alex\\source\\repos\\ttit_kursovaya\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ziang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -108,7 +108,7 @@ namespace kekes.Controllers
                 return NotFound();
             }
 
-            var post = await _context.Posts.FindAsync(id);
+            var post = await _context.Posts.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == id);
             if (post == null)
             {
                 return NotFound();
@@ -117,7 +117,15 @@ namespace kekes.Controllers
             {
                 return this.Unauthorized();
             }
-            return View(post);
+
+            var model = new PostEditViewModel
+            {
+                Id = post.Id,
+                Name = post.Name,
+                Text = post.Text
+            };
+
+            return View(model);
         }
 
         // POST: Posts/Edit/5
@@ -126,39 +134,28 @@ namespace kekes.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Text,Created,LastActivity,SectionId")] Post post)
+        public async Task<IActionResult> Edit(PostEditViewModel model)
         {
-            if (id != post.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
+                var post = await _context.Posts.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == model.Id);
+                if (post == null)
                 {
-                    if (!this._userPermissions.CanEditPost(post))
-                    {
-                        return this.Unauthorized();
-                    }
-                    _context.Update(post);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+                if (!this._userPermissions.CanEditPost(post))
                 {
-                    if (!PostExists(post.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    return this.Unauthorized();
                 }
-                return RedirectToAction(nameof(Index));
+
+                post.Name = model.Name;
+                post.Text = model.Text;
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Details", "Posts", new { id = model.Id });
             }
-            ViewData["SectionId"] = new SelectList(_context.Sections, "Id", "Id", post.SectionId);
-            return View(post);
+            return View(model);
         }
 
         // GET: Posts/Delete/5
@@ -171,7 +168,7 @@ namespace kekes.Controllers
             }
 
             var post = await _context.Posts
-                .Include(p => p.Section)
+                .Include(p => p.Section).Include(p => p.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
@@ -191,7 +188,7 @@ namespace kekes.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var post = await _context.Posts.FindAsync(id);
+            var post = await _context.Posts.Include(x => x.User).FirstOrDefaultAsync(x => x.Id == id);
             if (!this._userPermissions.CanEditPost(post))
             {
                 return this.Unauthorized();

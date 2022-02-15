@@ -30,7 +30,7 @@
            <form asp-action="Delete">
                <div class="form-actions no-color d-flex justify-content-between">
                    <input type="submit" value="Удалить" class="btnDeleteAttachment btn btn-danger" /> 
-                   <a asp-action="Details" asp-controller="Posts" class="text-secondary m-0 p-0 pt-3">Вернуться к посту</a>
+                   <a asp-action="Details" asp-controller="Posts" asp-route-id="@Model.PostId" class="text-secondary m-0 p-0 pt-3">Вернуться к посту</a>
                </div>
            </form>
        </div>
