@@ -199,11 +199,15 @@ namespace kekes.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddComment(CommentCreateViewModel model)
         {
+            if (!this.HttpContext.User.Identity.IsAuthenticated)
+            {
+                return this.Unauthorized();
+            }
+
             var post = await _context.Posts
             .FirstOrDefaultAsync(m => m.Id == model.PostId);
             if (post == null)
