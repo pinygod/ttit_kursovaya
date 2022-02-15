@@ -1,4 +1,5 @@
 using kekes.Data;
+using kekes.Data.Models;
 using kekes.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -11,8 +12,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUserPermissionsService, UserPermissionsService>();
@@ -43,5 +44,43 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Sections}/{action=Index}/{id?}");
 app.MapRazorPages();
+
+var serviceProvider = builder.Services.BuildServiceProvider();
+
+var roleManager = serviceProvider.GetService<RoleManager<IdentityRole>>();
+var userManager = serviceProvider.GetService<UserManager<IdentityUser>>();
+
+var adminsRole = await roleManager.FindByNameAsync(ApplicationRoles.Administrators);
+if (adminsRole == null)
+{
+    var roleResult = await roleManager.CreateAsync(new IdentityRole(ApplicationRoles.Administrators));
+    if (!roleResult.Succeeded)
+    {
+        throw new InvalidOperationException($"Unable to create {ApplicationRoles.Administrators} role.");
+    }
+
+    adminsRole = await roleManager.FindByNameAsync(ApplicationRoles.Administrators);
+}
+
+var adminUser = await userManager.FindByNameAsync("admin@localhost.local");
+if (adminUser == null)
+{
+    var userResult = await userManager.CreateAsync(new IdentityUser
+    {
+        UserName = "admin@localhost.local",
+        Email = "admin@localhost.local"
+    }, "AdminPass123!");
+    if (!userResult.Succeeded)
+    {
+        throw new InvalidOperationException($"Unable to create admin@localhost.local user");
+    }
+
+    adminUser = await userManager.FindByNameAsync("admin@localhost.local");
+}
+
+if (!await userManager.IsInRoleAsync(adminUser, ApplicationRoles.Administrators))
+{
+    await userManager.AddToRoleAsync(adminUser, ApplicationRoles.Administrators);
+}
 
 app.Run();
