@@ -7,5 +7,7 @@ namespace kekes.Services
         Boolean CanEditPost(Post post);
 
         Boolean CanEditPostComment(Comment postComment);
+
+        Boolean CanAddSection();
     }
 }

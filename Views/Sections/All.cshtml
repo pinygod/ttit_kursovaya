@@ -1,4 +1,6 @@
-﻿@model IEnumerable<kekes.Data.Models.Section>
+﻿@using kekes.Services
+@model IEnumerable<kekes.Data.Models.Section>
+@inject IUserPermissionsService UserPermissions
 
 @{
     ViewData["Title"] = "Index";
@@ -8,21 +10,24 @@
     <div class="d-flex flex-row justify-content-between">
         <div class="h4 pb-2 text-light p-0 m-0">Разделы</div>
 
-        <p class="p-0 pt-1 m-0">
-            <a asp-action="Create" class="p-0 m-0 text-light">Создать раздел</a>
-        </p>
+        @if (UserPermissions.CanAddSection())
+        {
+            <p class="p-0 pt-1 m-0">
+                <a asp-action="Create" class="p-0 m-0 text-light">Создать раздел</a>
+            </p>
+        }
     </div>
 
 
     <table class="table rounded" id="OrderPopularPosts">
         <tbody>
-         @foreach (var item in Model) {
-                   <tr>
+            @foreach (var item in Model)
+            {
+                <tr>
                     <td>
                         <a asp-action="Details" asp-route-id="@item.Id" class="text-dark">@Html.DisplayFor(modelItem => item.Name)</a>
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="text-dark">Редактировать</a> |
                         <a asp-action="Delete" asp-route-id="@item.Id" class="text-dark">Удалить</a>
                     </td>
                     <td>
@@ -30,12 +35,11 @@
                     </td>
                 </tr>
             }
-         </tbody>
+        </tbody>
     </table>
 </div>
 <div class="col-1"></div>
 <div class="mainContainer col-2 p-2 border rounded d-flex align-self-start">
-   <h6 class="text-light text-center w-100">Объявления</h6>
-   
+    <h6 class="text-light text-center w-100">Объявления</h6>
 </div>
 

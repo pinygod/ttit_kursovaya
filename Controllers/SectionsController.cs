@@ -57,6 +57,7 @@ namespace kekes.Controllers
             {
                 SectionId = section.Id,
                 SectionName = section.Name,
+                SectionDescription = section.Description,
                 Posts = section.Posts != default ? section.Posts : new List<Post>(),
             };
 
@@ -64,7 +65,7 @@ namespace kekes.Controllers
         }
 
         // GET: Sections/Create
-        [Authorize]
+        [Authorize(Roles = ApplicationRoles.Administrators)]
         public IActionResult Create()
         {
             return View();
@@ -73,7 +74,7 @@ namespace kekes.Controllers
         // POST: Sections/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
+        [Authorize(Roles = ApplicationRoles.Administrators)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(SectionCreateViewModel model)
@@ -83,6 +84,7 @@ namespace kekes.Controllers
                 var section = new Section
                 {
                     Name = model.Name,
+                    Description = model.Description,
                     Id = Guid.NewGuid()
                 };
                 _context.Add(section);
@@ -90,59 +92,6 @@ namespace kekes.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(model);
-        }
-
-        // GET: Sections/Edit/5
-        [Authorize(Roles = ApplicationRoles.Administrators)]
-        public async Task<IActionResult> Edit(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var section = await _context.Sections.FindAsync(id);
-            if (section == null)
-            {
-                return NotFound();
-            }
-            return View(section);
-        }
-
-        // POST: Sections/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = ApplicationRoles.Administrators)]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name")] Section section)
-        {
-            if (id != section.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(section);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!SectionExists(section.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(section);
         }
 
         // GET: Sections/Delete/5

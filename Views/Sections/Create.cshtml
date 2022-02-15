@@ -1,4 +1,5 @@
-﻿@model SectionCreateViewModel
+﻿@using kekes.Models
+@model SectionCreateViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -17,7 +18,7 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
 
                 <label for="FormControlTextarea" class="mt-2 mb-2 form-label"><h6 class="m-0">Описание</h6></label>
-                <textarea class="form-control " id="FormControlTextarea" rows="3"></textarea>
+                <textarea asp-for="Description" class="form-control " id="FormControlTextarea" rows="3"></textarea>
             </div>
             <div class="form-group text-center w-100">
                 <input type="submit" value="Создать" class="btnCreateNewSection btn btn-dark mt-3 w-100" />
