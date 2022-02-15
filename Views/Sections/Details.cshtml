@@ -4,26 +4,34 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>@Model.SectionName</h1>
+<div class="mainContainer col-9 p-2 border rounded ">
+    <div class="d-flex flex-row justify-content-between">
+        <h4>@Model.SectionName</h4>
 
-<p>
-    <a asp-action="Create" asp-controller="Posts" asp-route-sectionId="@Model.SectionId">Create new post</a>
-</p>
-
-<table class="table">
-    <tbody>
-@foreach (var item in Model.Posts) {
-        <tr>
-            <td>
-                <a asp-action="Details" asp-controller="Posts" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Created)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        <p class="p-0 pt-1 m-0">
+            <a asp-action="Create" asp-controller="Posts" asp-route-sectionId="@Model.SectionId" class="text-light">Создать новый пост</a>
+        </p>
+    </div>
+    <table class="table rounded" id="OrderPopularPosts">
+        <tbody>
+         @foreach (var item in Model.Posts) {
+                   <tr>
+                    <td>
+                        <a asp-action="Details" asp-controller="Posts" asp-route-id="@item.Id" class="text-dark">@Html.DisplayFor(modelItem => item.Name)</a>
+                    </td>
+                    <td>
+                       @Html.DisplayFor(modelItem => item.Text)            
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Created)
+                    </td>
+                </tr>
+            }
+         </tbody>
+    </table>
+</div>
+<div class="col-1"></div>
+<div class="mainContainer col-2 p-2 border rounded d-flex align-self-start">
+   <h6 class="text-light text-center w-100">Объявления</h6>
+   
+</div>

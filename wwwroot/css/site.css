@@ -3,22 +3,30 @@ html {
 }
 
 body {
-    background-color: #cdcdcd;
+    background-image: url(../img/1581998648_geometric_vsthemes_ru-37.png);
 }
 
-.navbar {
-    box-shadow: 0px -33px 11px -29px rgba(205, 205, 205, 1) inset !important;
+.logo{
+    width:4%;
+    z-index: 1;
 }
 
 .mainContainer {
     background-color: #212529 !important;
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.32) !important;
+    box-shadow: 0px 5px 10px 2px rgb(153, 208, 255) !important;
     color: #cdcdcd;
 }
 
+.inputFields {
+    background-color: #cdcdcd;
+}
+
+.form-control {
+    background-color: #cdcdcd;
+}
 
 @media (min-width: 768px) {
-  html {
+    html {
     font-size: 16px;
   }
 }
@@ -39,4 +47,25 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+button:focus, .btn:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.siteName:hover {
+    text-shadow: 4px 4px 2px rgb(153, 208, 255) !important;
+}
+
+.navLinks {
+    color: #ffffff;
+}
+
+.navLinks:hover{
+    color: #ff0000;
+}
+
+.navbar {
+    box-shadow: 0px -33px 11px -29px rgb(153, 208, 255)inset !important;
 }

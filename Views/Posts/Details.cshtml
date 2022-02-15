@@ -7,28 +7,26 @@
 }
 
 
-<div class="blog-post-details">
+<div class="mainContainer col-9 p-2 border rounded ps-3 pe-3 pb-4">
+    <div class="blog-post-details">
     <h1>@Model.Name</h1>
-    <div class="blog-post-info">
-        @Model.User.UserName | @Model.Section.Name | @Model.Created
-        @if (canEditPost)
-        {
-            <text>|</text> <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-            <text>|</text> <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
-        }
+    <div class="blog-post-info d-flex flex-row justify-content-between">
+        <div>@Model.User.UserName | @Model.Section.Name | @Model.Created</div>
+        <div>
+            @if (canEditPost)
+            {
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="text-secondary">Редактировать</a>
+                <text>|</text> <a asp-action="Delete" asp-route-id="@Model.Id" class="text-secondary">Удалить</a>
+            }
+        </div>
     </div>
 
-    <div class="blog-post-text">@Model.Text</div>
+    <h3 class="mb-2 mt-2">Описание</h3>
+    <div class="blog-post-text ms-3">@Model.Text</div>
 </div>
 
-<h3>Attachments</h3>
+<h3 class="mb-4 mt-2">Вложения</h3>
 
-@if (canEditPost)
-{
-    <p>
-        <a asp-action="Create" asp-controller="PostAttachments" asp-route-postId="@Model.Id" class="btn btn-default">Create New</a>
-    </p>
-}
 @if (Model.Attachments != null)
 {
     <div class="row">
@@ -36,11 +34,11 @@
         {
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
-                    <img src="@item.Path" alt="Image" />
+                    <img src="@item.Path" alt="Image" class="img-fluid  rounded"/>
                     @if (canEditPost)
                     {
-                        <div class="caption">
-                            <p><a asp-action="Delete" asp-controller="PostAttachments" asp-route-id="@item.Id" class="btn btn-danger">Delete</a></p>
+                        <div class=" caption text-center">
+                            <p><a asp-action="Delete" asp-controller="PostAttachments" asp-route-id="@item.Id" class="btnDeleteAttachment btn btn-danger mt-2">Удалить</a></p>
                         </div>
                     }
                 </div>
@@ -49,13 +47,20 @@
     </div>
 }
 
-<h3>Comments</h3>
+@if (canEditPost)
+{
+    <p class="text-end">
+        <a asp-action="Create" asp-controller="PostAttachments" asp-route-postId="@Model.Id" class="btnAddComment btn btn-dark">Добавить</a>
+    </p>
+}
+
+<h3 class="mb-4">Обсуждение</h3>
 
 <form method="post" asp-action="AddComment">
-    <input name="Text" class="form-control" />
-    <input name="PostId" value="@Model.Id" class="form-control" type="hidden" />
-    <div class="form-group">
-        <input type="submit" value="Add comment" class="btn btn-primary" />
+    <input name="Text" class="form-control inputFields" />
+    <input name="PostId" value="@Model.Id" class="form-control border-2 border-dark" type="hidden" />
+    <div class="form-group mt-3 w-100 text-end">
+        <input type="submit" value="Комментировать" class="btnAddComment btn btn-dark end-0" />
     </div>
 </form>
 
@@ -63,20 +68,32 @@
     <div class="blog-posts-items">
         @foreach (var item in Model.Comments.OrderByDescending(x => x.Created))
         {
-            <div class="blog-post panel panel-default">
-                <div class="panel-heading">
-                    <div>@item.User.UserName | @item.Created
+            <div class="blog-post panel panel-default rounded bg-light border border-2 border-dark mt-3 ">
+                <div class="panel-heading inputFields border-bottom border-1 border-dark  ps-2 pt-1 pb-1 w-100 d-flex flex-row justify-content-between">
+                    <div class="text-dark ps-2">@item.User.UserName | @item.Created</div>
+                    <div class="text-end text-dark pe-3"> 
                         @if (UserPermissions.CanEditPostComment(item))
                         {
-                            <text>| <a asp-action="Edit" asp-controller="PostComments" asp-route-id="@item.Id">Edit</a></text>
-                            <text>| <a asp-action="Delete" asp-controller="PostComments" asp-route-id="@item.Id">Delete</a></text>
-                        }
+                            <text><a asp-action="Edit" asp-controller="PostComments" asp-route-id="@item.Id" class="text-secondary">Редактировать</a></text>
+                            <text>| <a asp-action="Delete" asp-controller="PostComments" asp-route-id="@item.Id" class="text-secondary">Удалить</a></text>
+                        }</div>
                     </div>
-                </div>
-                <div class="panel-body">
-                    <div class="blog-post-text">@item.Text</div>
+                <div class="panel-body inputFields pt-2 pb-2 ps-4 ">
+                    <div class="blog-post-text inputFields text-dark">@item.Text</div>
                 </div>
             </div>
         }
     </div>
 </div>
+</div>
+<div class="col-1"></div>
+<div class="mainContainer col-2 p-2 border rounded d-flex align-self-start">
+   <h6 class="text-light text-center w-100">Объявления</h6>
+</div>
+
+
+
+
+
+
+
