@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using kekes.Data;
 using kekes.Data.Models;
 using Microsoft.AspNetCore.Authorization;
+using kekes.Models;
 
 namespace kekes.Controllers
 {
@@ -27,9 +28,15 @@ namespace kekes.Controllers
             return View(await _context.Announcements.ToListAsync());
         }
 
-        public async Task<List<Announcement>> GetAnnouncements()
+        public async Task<List<AnnouncementShortModel>> GetAnnouncements()
         {
-            return await _context.Announcements.ToListAsync();
+            var announcements = await _context.Announcements.ToListAsync();
+            announcements = announcements.OrderByDescending(x => x.Date).ToList();
+            return announcements.Select(x => new AnnouncementShortModel
+            {
+                Title = x.Title,
+                Date = $"{x.Date.Day}.{x.Date.Month}.{x.Date.Year}"
+            }).ToList();
         }
 
         // GET: Announcements/Details/5
