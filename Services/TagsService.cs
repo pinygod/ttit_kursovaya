@@ -41,7 +41,7 @@ namespace kekes.Services
 
         public async Task<UserTags> GetUserTags(IdentityUser user)
         {
-            var userTags = await _context.UserTags.FirstOrDefaultAsync(x => x.User == user);
+            var userTags = await _context.UserTags.Include(x => x.User).Include(x => x.Tags).FirstOrDefaultAsync(x => x.User == user);
             if (userTags == default)
             {
                 userTags = new UserTags { User = user };
@@ -66,7 +66,7 @@ namespace kekes.Services
 
             if (tag.Item2)
             {
-                var users = _context.UserTags.Where(x => x.Tags.Contains(tag.Item1)).Select(x => x.User).ToList();
+                var users = _context.UserTags.Include(x => x.Tags).Include(x => x.User).Where(x => x.Tags.Contains(tag.Item1)).Select(x => x.User).ToList();
                 await _notificationsService.SendNotificationToUsers(users, "Добавлен новый пост в разделе " + post.Section.Name + " с тегом " + text);
             }
         }

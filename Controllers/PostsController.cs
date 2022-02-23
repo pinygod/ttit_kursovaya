@@ -258,11 +258,13 @@ namespace kekes.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task SubscribeOnTag(TagSubscribeViewModel model)
+        public async Task<IActionResult> SubscribeOnTag(Guid tagId, Guid postId)
         {
             var user = await _userManager.GetUserAsync(HttpContext.User);
 
-            await _tags.SubscribeUserOnTagAsync(model.TagId, user);
+            await _tags.SubscribeUserOnTagAsync(tagId, user);
+
+            return RedirectToAction("Details", "Posts", new { id = postId });
         }
 
         [Authorize(Roles = ApplicationRoles.Administrators)]
