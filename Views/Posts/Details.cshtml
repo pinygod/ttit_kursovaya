@@ -59,15 +59,39 @@
     }
 
     <div id="placeTags" class="d-flex justify-content-between">
-        <h3 class="mb-4 mt-2">Теги</h3>
+        <h3 class="mb-3 mt-2">Теги</h3>
         @if (canEditPost)
         {
             <p class="text-end align-self-end">
                 <a id="btnAddTags" class="btnAddComment btn btn-dark">Добавить</a>
             </p>
         }
+   </div>
 
-    </div>
+   <div class="d-flex flex-row ms-3 mb-2">
+        @foreach (var item in Model.Tags)
+        {
+            var a = item.Id;
+            var b = item.Text;
+
+            <h6 id="tag-@item.Text" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Text" class="tags me-3">@item.Text</h6>
+
+            <div class="modal fade" id="exampleModal-@item.Text" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header p-0 m-0">
+                      <button type="button" class="btn-close end-0 me-2 mt-1 mb-1" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                  </div>
+                  <div class="modal-body d-flex justify-content-center">
+                    <button type="button" class="btnSubmit btn btn-dark me-1">Подписаться на тег @item.Text</button>
+                    <button type="button" class="btnSubmit btn btn-dark ms-1">Посты с тегом @item.Text</button>
+                    <input name="TagId" value="@item.Id" class="form-control" type="hidden" />
+                  </div>
+                </div>
+              </div>
+            </div>
+        }
+   </div>
 
     @if (canEditPost)
     {
@@ -102,7 +126,6 @@
         </text>
     }
 
-
     <div class="blog-posts">
         <div class="blog-posts-items">
             @foreach (var item in Model.Comments.OrderByDescending(x => x.Created))
@@ -134,8 +157,22 @@
     <h6 class="text-light text-center w-100">Объявления</h6>
 </div>
 
-<script>
 
+@*  <!-- Модальное окно -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <button type="button" class="btnSubmit btn btn-dark">Подписаться на тег @item.Text</button>
+                    <button type="button" class="btnSubmit btn btn-dark">Посты с тегом @item.Text</button>
+                    <input name="TagId" value="@item.Id" class="form-control" type="hidden" />
+                    <button type="button" class="btn-close ms-5 mt-2" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                  </div>
+                </div>
+              </div>
+            </div>*@
+
+<script>
     document.getElementById('btnAddTags').onclick = function () {
         document.getElementById('createTag').className = "";
     }
@@ -144,7 +181,17 @@
         document.getElementById('createTag').className = "d-none";
     }
 
+
+    
 </script>
+
+
+
+
+
+
+
+
 
 
 

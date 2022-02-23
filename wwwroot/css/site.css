@@ -83,7 +83,18 @@ button:focus, .btn:focus {
 }
 
 
-
 .manageNav:hover {
+    color: rgba(200, 254, 254, 0.81);
+}
+
+.tags {
+    text-decoration: none;
+    cursor: default;
+}
+
+div {
+    cursor: default;
+}
+.tags:hover {
     color: rgba(200, 254, 254, 0.81);
 }
