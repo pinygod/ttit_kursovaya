@@ -9,5 +9,6 @@ namespace kekes.Data.Models
         public string Title { get; set; }
         [Required]
         public string Text { get; set; }
+        public DateTime Date { get; set; }
     }
 }
