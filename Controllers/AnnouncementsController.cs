@@ -68,6 +68,7 @@ namespace kekes.Controllers
             if (ModelState.IsValid)
             {
                 announcement.Id = Guid.NewGuid();
+                announcement.Date = DateTime.Now;
                 _context.Add(announcement);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
