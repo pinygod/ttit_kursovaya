@@ -22,9 +22,6 @@ function kek() {
                 console.error(error);
             }
         })
-
-        /*$('#liveToast').addClass('toast show');
-        $('#liveToastBody').text(message);  */
     });
 
     connection.start().catch(function (err) {

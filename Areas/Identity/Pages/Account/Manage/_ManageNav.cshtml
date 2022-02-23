@@ -11,3 +11,20 @@
         <li id="external-logins" class="nav-item"><a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext)" asp-page="./ExternalLogins">External logins</a></li>
     }
 </ul>
+
+<script>
+    document.getElementById('profile').onclick = function(){
+        document.getElementById('manNav').className = "row";
+        document.getElementById('infoProfile').className = "d-none";
+    }
+
+    document.getElementById('email').onclick = function(){
+        document.getElementById('manNav').className = "row";
+        document.getElementById('infoProfile').className = "d-none";
+    }
+
+     document.getElementById('change-password').onclick = function(){
+        document.getElementById('manNav').className = "row";
+        document.getElementById('infoProfile').className = "d-none";
+    }
+</script>
