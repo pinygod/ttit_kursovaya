@@ -29,14 +29,14 @@
 
     <div class="d-flex justify-content-between">
         <h3 class="mb-4 mt-2">Вложения</h3>
-            @if (canEditPost)
-            {
-                <p class="text-end align-self-end">
-                    <a asp-action="Create" asp-controller="PostAttachments" asp-route-postId="@Model.Id" class="btnAddComment btn btn-dark">Добавить</a>
-                </p>
-            }
+        @if (canEditPost)
+        {
+            <p class="text-end align-self-end">
+                <a asp-action="Create" asp-controller="PostAttachments" asp-route-postId="@Model.Id" class="btnAddComment btn btn-dark">Добавить</a>
+            </p>
+        }
     </div>
-   
+
 
     @if (Model.Attachments != null)
     {
@@ -58,24 +58,28 @@
         </div>
     }
 
-   <div id="placeTags" class="d-flex justify-content-between">
+    <div id="placeTags" class="d-flex justify-content-between">
         <h3 class="mb-4 mt-2">Теги</h3>
-            @if (canEditPost)
-            {
-                <p class="text-end align-self-end">
-                    <a id="btnAddTags" class="btnAddComment btn btn-dark">Добавить</a>
-                </p>
-            }
+        @if (canEditPost)
+        {
+            <p class="text-end align-self-end">
+                <a id="btnAddTags" class="btnAddComment btn btn-dark">Добавить</a>
+            </p>
+        }
 
     </div>
 
-    <form id="createTag" class="d-none">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Название тега</label>
-                        <input  class="form-control" id="exampleInput">
-                    </div>
-                    <button id="btnCreateTag" type="submit" class="btnSubmit btn btn-dark align-self-end mb-3">Создать</button>
-     </form>
+    @if (canEditPost)
+    {
+        <form method="post" asp-action="AddTag" asp-controller="Posts" id="createTag" class="d-none">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Название тега</label>
+                <input name="Text" class="form-control" />
+                <input name="PostId" value="@Model.Id" class="form-control" type="hidden" />
+            </div>
+            <button id="btnCreateTag" type="submit" class="btnSubmit btn btn-dark align-self-end mb-3">Создать</button>
+        </form>
+    }
 
 
     <h3 class="mb-4">Обсуждение</h3>
@@ -111,7 +115,7 @@
                             {
                                 <form method="post" asp-action="DeleteComment" asp-controller="Posts" asp-route-id="@item.Id">
                                     <div class="form-actions no-color">
-                                        <input type="submit" value="Удалить"/>
+                                        <input type="submit" value="Удалить" />
                                     </div>
                                 </form>
                             }
@@ -131,7 +135,7 @@
 </div>
 
 <script>
- 
+
     document.getElementById('btnAddTags').onclick = function () {
         document.getElementById('createTag').className = "";
     }

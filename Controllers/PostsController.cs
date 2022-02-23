@@ -25,12 +25,13 @@ namespace kekes.Controllers
         private readonly ITagsService _tags;
         private readonly IHubContext<NotificationHub> _hubContext;
 
-        public PostsController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IUserPermissionsService userPermissions, IHubContext<NotificationHub> hubContext)
+        public PostsController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IUserPermissionsService userPermissions, IHubContext<NotificationHub> hubContext, ITagsService tags)
         {
             _context = context;
             _userManager = userManager;
             _userPermissions = userPermissions;
             _hubContext = hubContext;
+            _tags = tags;
         }
 
         // GET: Posts

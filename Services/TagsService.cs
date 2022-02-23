@@ -1,6 +1,7 @@
 ﻿using kekes.Data;
 using kekes.Data.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace kekes.Services
 {
@@ -48,7 +49,7 @@ namespace kekes.Services
 
         public async Task AddTagToPostAsync(string text, Guid postId)
         {
-            var post = _context.Posts.FirstOrDefault(x => x.Id == postId);
+            var post = _context.Posts.Include(x=> x.Tags).FirstOrDefault(x => x.Id == postId);
             if (post == default)
             {
                 return;
