@@ -9,8 +9,7 @@ function kek() {
     connection.on("displayNotification", function (message) {
         debugger;
         $('#liveToast').addClass('toast show');
-        $('#liveToast').toast({ delay: 5000, animation: false });
-        $('#liveToastBody').text = message;
+        $('#liveToastBody').text(message);
         
     });
 
