@@ -27,9 +27,12 @@
                     <td>
                         <a asp-action="Details" asp-route-id="@item.Id" class="text-dark">@Html.DisplayFor(modelItem => item.Name)</a>
                     </td>
-                    <td>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-dark">Удалить</a>
-                    </td>
+                    @if (UserPermissions.CanAddSection())
+                    {
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="text-dark">Удалить</a>
+                        </td>
+                    }
                     <td>
                         <p class="m-0 p-0 text-end text-dark">@Html.DisplayFor(modelItem => @item.Posts.Count)</p>
                     </td>
@@ -40,12 +43,36 @@
 </div>
 <div class="col-1"></div>
 <div class="mainContainer col-2 p-2 border rounded d-flex align-self-start flex-md-column">
-   <h6 class="text-light text-center w-100">Объявления</h6>
-   <div>
-       <p>02.02.22 - Добавлен новый раздел</p>
-       <p>02.01.22 - Обновлен дизайн сайта</p>
-   </div>
-   
-   
+    <h6 class="text-light text-center w-100">Объявления</h6>
+    <div id="newAnnouncements">
+        
+    </div>
 </div>
+
+ <script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    function a(){
+        var counter = 0;
+        $.ajax({
+            type: 'GET',
+            url: '/Announcements/GetAnnouncements',
+            success: function (response) {
+                $.each(response, function (index, value) {
+                    counter++;
+                    if(counter <= 3)
+                    {
+                        $('#newAnnouncements').append('<p id=list'+value.id+'>' + value.title + ' - ' + value.date + '</p>');
+                    }
+                    
+                })
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        })
+    }
+
+    a()
+    
+</script>
 

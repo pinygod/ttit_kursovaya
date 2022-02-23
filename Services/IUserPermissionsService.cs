@@ -9,5 +9,7 @@ namespace kekes.Services
         Boolean CanEditPostComment(Comment postComment);
 
         Boolean CanAddSection();
+
+        Boolean CanEditAnnouncement();
     }
 }

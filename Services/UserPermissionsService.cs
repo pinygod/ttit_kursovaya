@@ -55,5 +55,15 @@ namespace kekes.Services
 
             return false;
         }
+
+        public Boolean CanEditAnnouncement()
+        {
+            if (this.HttpContext.User.IsInRole(ApplicationRoles.Administrators))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
