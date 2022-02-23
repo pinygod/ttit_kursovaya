@@ -266,7 +266,7 @@ namespace kekes.Controllers
         {
             var user = await _userManager.GetUserAsync(HttpContext.User);
 
-            await _tags.SubscribeUserOnTagAsync(model.Text, user);
+            await _tags.SubscribeUserOnTagAsync(model.TagId, user);
         }
 
         [Authorize(Roles = ApplicationRoles.Administrators)]

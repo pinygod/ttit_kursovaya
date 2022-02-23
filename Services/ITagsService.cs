@@ -8,6 +8,6 @@ namespace kekes.Services
         Task AddTagToPostAsync(string text, Guid postId);
         Task<Tuple<Tag, bool>> GetTagAsync(string text);
         Task<UserTags> GetUserTags(IdentityUser user);
-        Task SubscribeUserOnTagAsync(string text, IdentityUser user);
+        Task SubscribeUserOnTagAsync(Guid tagId, IdentityUser user);
     }
 }

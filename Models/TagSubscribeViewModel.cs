@@ -5,6 +5,6 @@ namespace kekes.Models
     public class TagSubscribeViewModel
     {
         [Required]
-        public string Text { get; set; }
+        public Guid TagId { get; set; }
     }
 }

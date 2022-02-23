@@ -18,7 +18,7 @@ namespace kekes.Services
 
         public async Task<Tuple<Tag, bool>> GetTagAsync(string text)
         {
-            var tag = _context.Tags.FirstOrDefault(x => x.Text == text);
+            var tag = await _context.Tags.FirstOrDefaultAsync(x => x.Text == text);
             if (tag == default)
             {
                 tag = new Tag
@@ -34,9 +34,14 @@ namespace kekes.Services
             return new Tuple<Tag, bool>(tag, true);
         }
 
+        public async Task<Tag> GetTagAsync(Guid tagId)
+        {
+            return await _context.Tags.FirstOrDefaultAsync(x => x.Id == tagId);
+        }
+
         public async Task<UserTags> GetUserTags(IdentityUser user)
         {
-            var userTags = _context.UserTags.FirstOrDefault(x => x.User == user);
+            var userTags = await _context.UserTags.FirstOrDefaultAsync(x => x.User == user);
             if (userTags == default)
             {
                 userTags = new UserTags { User = user };
@@ -49,7 +54,7 @@ namespace kekes.Services
 
         public async Task AddTagToPostAsync(string text, Guid postId)
         {
-            var post = _context.Posts.Include(x=> x.Tags).FirstOrDefault(x => x.Id == postId);
+            var post = await _context.Posts.Include(x => x.Tags).FirstOrDefaultAsync(x => x.Id == postId);
             if (post == default)
             {
                 return;
@@ -66,12 +71,17 @@ namespace kekes.Services
             }
         }
 
-        public async Task SubscribeUserOnTagAsync(string text, IdentityUser user)
+        public async Task SubscribeUserOnTagAsync(Guid tagId, IdentityUser user)
         {
-            var tag = (await GetTagAsync(text)).Item1;
-            var userTags = await GetUserTags(user);
+            var tag = await GetTagAsync(tagId);
+            if (tag == default)
+            {
+                return;
+            }
 
+            var userTags = await GetUserTags(user);
             userTags.Tags.Add(tag);
+
             await _context.SaveChangesAsync();
         }
     }
