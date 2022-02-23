@@ -22,6 +22,7 @@ namespace kekes.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IUserPermissionsService _userPermissions;
+        private readonly ITagsService _tags;
         private readonly IHubContext<NotificationHub> _hubContext;
 
         public PostsController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IUserPermissionsService userPermissions, IHubContext<NotificationHub> hubContext)
@@ -48,7 +49,7 @@ namespace kekes.Controllers
             }
 
             var post = await _context.Posts
-                .Include(p => p.Section).Include(p => p.User).Include(x => x.Attachments).Include(p => p.Comments).ThenInclude(x => x.User)
+                .Include(p => p.Section).Include(p => p.Tags).Include(p => p.User).Include(x => x.Attachments).Include(p => p.Comments).ThenInclude(x => x.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
@@ -203,7 +204,7 @@ namespace kekes.Controllers
 
             _context.Posts.Remove(post);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Details", "Sections", new { id = post.SectionId });
         }
 
         [HttpPost]
@@ -235,6 +236,36 @@ namespace kekes.Controllers
             _context.Add(comment);
             await _context.SaveChangesAsync();
             return RedirectToAction("Details", "Posts", new { id = model.PostId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddTag(TagAddViewModel model)
+        {
+            var post = await _context.Posts
+            .FirstOrDefaultAsync(m => m.Id == model.PostId);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            if (!_userPermissions.CanEditPost(post))
+            {
+                return this.Unauthorized();
+            }
+
+            await _tags.AddTagToPostAsync(model.Text, post.Id);
+
+            return RedirectToAction("Details", "Posts", new { id = model.PostId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task SubscribeOnTag(TagSubscribeViewModel model)
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+
+            await _tags.SubscribeUserOnTagAsync(model.Text, user);
         }
 
         [Authorize(Roles = ApplicationRoles.Administrators)]

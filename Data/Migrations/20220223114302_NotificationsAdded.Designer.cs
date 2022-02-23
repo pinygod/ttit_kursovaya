@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using kekes.Data;
 
@@ -11,9 +12,10 @@ using kekes.Data;
 namespace kekes.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220223114302_NotificationsAdded")]
+    partial class NotificationsAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,31 +178,9 @@ namespace kekes.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("UserTagsId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserTagsId");
 
                     b.ToTable("Tags");
-                });
-
-            modelBuilder.Entity("kekes.Data.Models.UserTags", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserTags");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -474,24 +454,6 @@ namespace kekes.Data.Migrations
                     b.Navigation("Post");
                 });
 
-            modelBuilder.Entity("kekes.Data.Models.Tag", b =>
-                {
-                    b.HasOne("kekes.Data.Models.UserTags", null)
-                        .WithMany("Tags")
-                        .HasForeignKey("UserTagsId");
-                });
-
-            modelBuilder.Entity("kekes.Data.Models.UserTags", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -568,11 +530,6 @@ namespace kekes.Data.Migrations
             modelBuilder.Entity("kekes.Data.Models.Section", b =>
                 {
                     b.Navigation("Posts");
-                });
-
-            modelBuilder.Entity("kekes.Data.Models.UserTags", b =>
-                {
-                    b.Navigation("Tags");
                 });
 #pragma warning restore 612, 618
         }

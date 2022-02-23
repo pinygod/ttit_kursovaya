@@ -17,5 +17,7 @@ namespace kekes.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<PostAttachment> PostAttachments { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<UserTags> UserTags { get; set; }
     }
 }
