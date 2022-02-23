@@ -6,10 +6,25 @@
 function kek() {
     var connection = new signalR.HubConnectionBuilder().withUrl("/signalServer").build();
 
-    connection.on("displayNotification", function (message) {
+    connection.on("displayNotification", function () {
         debugger;
-        $('#liveToast').addClass('toast show');
-        $('#liveToastBody').text(message);  
+
+        $.ajax({
+            type: 'GET',
+            url: '/Notifications/GetNewNotifications',
+            success: function (response) {
+                $.each(response, function (index, value) {
+                    $('#liveToast').addClass('toast show');
+                    $('#liveToastBody').text(value.text);
+                })
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        })
+
+        /*$('#liveToast').addClass('toast show');
+        $('#liveToastBody').text(message);  */
     });
 
     connection.start().catch(function (err) {

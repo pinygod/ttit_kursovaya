@@ -23,14 +23,12 @@ namespace kekes.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IUserPermissionsService _userPermissions;
         private readonly ITagsService _tags;
-        private readonly IHubContext<NotificationHub> _hubContext;
 
-        public PostsController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IUserPermissionsService userPermissions, IHubContext<NotificationHub> hubContext, ITagsService tags)
+        public PostsController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IUserPermissionsService userPermissions, ITagsService tags)
         {
             _context = context;
             _userManager = userManager;
             _userPermissions = userPermissions;
-            _hubContext = hubContext;
             _tags = tags;
         }
 
@@ -100,8 +98,6 @@ namespace kekes.Controllers
                 };
                 _context.Add(post);
                 await _context.SaveChangesAsync();
-
-                await _hubContext.Clients.All.SendAsync("displayNotification", $"Добавлен пост \"{post.Name}\" в разделе \"{section.Name}\"");
 
                 return RedirectToAction("Details", "Sections", new { id = model.SectionId });
             }
@@ -243,7 +239,7 @@ namespace kekes.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddTag(TagAddViewModel model)
         {
-            var post = await _context.Posts
+            var post = await _context.Posts.Include(x => x.User)
             .FirstOrDefaultAsync(m => m.Id == model.PostId);
             if (post == null)
             {
