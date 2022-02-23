@@ -10,12 +10,27 @@
 }
 
 <div class="row w-100 d-flex justify-content-center">
-<div class="mainContainer col-8 p-2 border rounded ps-3 pe-3 pb-2">
+<div class="mainContainer col-12 p-2 border rounded ps-3 pe-3 pb-2">
     <h1>Личный кабинет</h1>
 
 <div>
     <hr />
-    <div class="row">
+    <div class="row w-100">  
+        <div id="avatar" class="col-2">
+            <img src="~/img/pngwing.png" class="img-fluid mb-3" />
+            <div class="btnAddComment btn btn-dark end-0 ms-5">Изменить</div>
+        </div>
+        <div class="col-6">
+            <div class="d-flex justify-content-between"> 
+                <h5>@User.Identity?.Name</h5>
+                <div class="h5 btn text-secondary ">Настройки профиля</div>
+            </div>
+            
+            <h6>Описание пользователя</h6>
+            <textarea class="w-100" ></textarea>
+        </div>
+    </div>
+    <div class="row d-none">
         <div class="col-md-2">
             <partial name="_ManageNav" />
         </div>
