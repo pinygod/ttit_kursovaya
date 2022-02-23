@@ -27,7 +27,16 @@
         <div class="blog-post-text ms-3">@Model.Text</div>
     </div>
 
-    <h3 class="mb-4 mt-2">Вложения</h3>
+    <div class="d-flex justify-content-between">
+        <h3 class="mb-4 mt-2">Вложения</h3>
+            @if (canEditPost)
+            {
+                <p class="text-end align-self-end">
+                    <a asp-action="Create" asp-controller="PostAttachments" asp-route-postId="@Model.Id" class="btnAddComment btn btn-dark">Добавить</a>
+                </p>
+            }
+    </div>
+   
 
     @if (Model.Attachments != null)
     {
@@ -49,12 +58,25 @@
         </div>
     }
 
-    @if (canEditPost)
-    {
-        <p class="text-end">
-            <a asp-action="Create" asp-controller="PostAttachments" asp-route-postId="@Model.Id" class="btnAddComment btn btn-dark">Добавить</a>
-        </p>
-    }
+   <div id="placeTags" class="d-flex justify-content-between">
+        <h3 class="mb-4 mt-2">Теги</h3>
+            @if (canEditPost)
+            {
+                <p class="text-end align-self-end">
+                    <a id="btnAddTags" class="btnAddComment btn btn-dark">Добавить</a>
+                </p>
+            }
+
+    </div>
+
+    <form id="createTag" class="d-none">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Название тега</label>
+                        <input  class="form-control" id="exampleInput">
+                    </div>
+                    <button id="btnCreateTag" type="submit" class="btnSubmit btn btn-dark align-self-end mb-3">Создать</button>
+     </form>
+
 
     <h3 class="mb-4">Обсуждение</h3>
 
@@ -107,6 +129,18 @@
 <div class="mainContainer col-2 p-2 border rounded d-flex align-self-start">
     <h6 class="text-light text-center w-100">Объявления</h6>
 </div>
+
+<script>
+ 
+    document.getElementById('btnAddTags').onclick = function () {
+        document.getElementById('createTag').className = "";
+    }
+
+    document.getElementById('btnCreateTag').onclick = function () {
+        document.getElementById('createTag').className = "d-none";
+    }
+
+</script>
 
 
 

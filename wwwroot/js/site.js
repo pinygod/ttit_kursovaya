@@ -9,8 +9,7 @@ function kek() {
     connection.on("displayNotification", function (message) {
         debugger;
         $('#liveToast').addClass('toast show');
-        $('#liveToastBody').text(message);
-        
+        $('#liveToastBody').text(message);  
     });
 
     connection.start().catch(function (err) {
@@ -19,6 +18,7 @@ function kek() {
 }
 
 kek();
+
 
 
 
