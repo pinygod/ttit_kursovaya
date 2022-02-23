@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "svWRMfioOAaGB1CARIbUDHhWI51fMQOWc2/yyGaOFt8=",
+  "Hash": "+abY7o8apdYKMlhi9GBDklXqYTe/S6Aeawyb6+4as/s=",
   "Source": "kekes",
   "BasePath": "_content/kekes",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\kekes.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\wwwroot\\attachments\\05a8149aaa1346d093a634e2cb3a48ce.png",
+      "SourceId": "kekes",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\wwwroot\\",
+      "BasePath": "_content/kekes",
+      "RelativePath": "attachments/05a8149aaa1346d093a634e2cb3a48ce.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\attachments\\05a8149aaa1346d093a634e2cb3a48ce.png"
+    },
+    {
       "Identity": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\wwwroot\\attachments\\1feacf6aff9c4ce9bf867a43441e40b2.png",
       "SourceId": "kekes",
       "SourceType": "Discovered",
@@ -1256,6 +1273,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\attachments\\e9d937d7f26b4cd58302b6b159ee782e.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\wwwroot\\attachments\\ea9935fe9e804d7d89c1d4469c253ebe.jpg",
+      "SourceId": "kekes",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\wwwroot\\",
+      "BasePath": "_content/kekes",
+      "RelativePath": "attachments/ea9935fe9e804d7d89c1d4469c253ebe.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\attachments\\ea9935fe9e804d7d89c1d4469c253ebe.jpg"
     },
     {
       "Identity": "C:\\Users\\Ziang\\Documents\\GitHub\\ttit_kursovaya\\wwwroot\\css\\CreateNewSections.css",
