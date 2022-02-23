@@ -8,181 +8,177 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = kekes
 build_property.RootNamespace = kekes
-build_property.ProjectDir = C:\Users\Alex\source\repos\ttit_kursovaya\
+build_property.ProjectDir = C:\Users\Ziang\Documents\GitHub\ttit_kursovaya\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Alex\source\repos\ttit_kursovaya
+build_property.MSBuildProjectDirectory = C:\Users\Ziang\Documents\GitHub\ttit_kursovaya
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Announcements/Create.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Announcements/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Announcements/Delete.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Announcements/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Announcements/Details.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Announcements/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Announcements/Edit.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Announcements/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Announcements/Index.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Announcements/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5ub3VuY2VtZW50c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Home/Index.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Home/Privacy.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/PostAttachments/Create.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/PostAttachments/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdEF0dGFjaG1lbnRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/PostAttachments/Delete.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/PostAttachments/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdEF0dGFjaG1lbnRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Posts/Create.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Posts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Posts/Delete.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Posts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Posts/Details.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Posts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Posts/Edit.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Posts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Posts/Index.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Posts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Sections/All.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Sections/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvbnNcQWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Sections/Create.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Sections/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Sections/Delete.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Sections/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Sections/Details.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Sections/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvbnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Sections/Index.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Sections/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VjdGlvbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Shared/Error.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/_ViewImports.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/_ViewStart.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alex/source/repos/ttit_kursovaya/Views/Shared/_Layout.cshtml]
+[C:/Users/Ziang/Documents/GitHub/ttit_kursovaya/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-jtgigiv6i3

@@ -816,3 +816,5 @@ C:\Users\Ziang\Documents\GitHub\ttit_kursovaya\obj\Debug\net6.0\kekes.pdb
 C:\Users\Ziang\Documents\GitHub\ttit_kursovaya\obj\Debug\net6.0\kekes.genruntimeconfig.cache
 C:\Users\Alex\source\repos\ttit_kursovaya\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
 C:\Users\Alex\source\repos\ttit_kursovaya\bin\Debug\net6.0\libman.json
+C:\Users\Ziang\Documents\GitHub\ttit_kursovaya\bin\Debug\net6.0\libman.json
+C:\Users\Ziang\Documents\GitHub\ttit_kursovaya\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll

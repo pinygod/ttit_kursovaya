@@ -9,20 +9,24 @@
     }
 }
 
-<h1>Manage your account</h1>
+<div class="row w-100 d-flex justify-content-center">
+<div class="mainContainer col-8 p-2 border rounded ps-3 pe-3 pb-2">
+    <h1>Личный кабинет</h1>
 
 <div>
-    <h2>Change your account settings</h2>
     <hr />
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <partial name="_ManageNav" />
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
             @RenderBody()
         </div>
     </div>
 </div>
+</div>
+</div>
+
 
 @section Scripts {
     @RenderSection("Scripts", required: false)

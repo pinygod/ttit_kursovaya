@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Views",
+    "\\Views\\Sections"
   ],
-  "SelectedNode": "\\kekes.sln",
+  "SelectedNode": "\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }

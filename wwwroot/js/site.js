@@ -8,8 +8,10 @@ function kek() {
 
     connection.on("displayNotification", function (message) {
         debugger;
-        alert(message);
-        console.log(message);
+        $('#liveToast').addClass('toast show');
+        $('#liveToast').toast({ delay: 5000, animation: false });
+        $('#liveToastBody').text = message;
+        
     });
 
     connection.start().catch(function (err) {
@@ -18,3 +20,6 @@ function kek() {
 }
 
 kek();
+
+
+
