@@ -71,10 +71,8 @@
     <div class="d-flex flex-row ms-3 mb-2">
         @foreach (var item in Model.Tags)
         {
-            var a = item.Id;
-            var b = item.Text;
 
-            <h6 id="tag-@item.Text" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Text" class="tags me-3">@item.Text</h6>
+            <h6 id="tag-@item.Text" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.Text" class="tags me-3">#@item.Text</h6>
 
             <div class="modal fade" id="exampleModal-@item.Text" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
