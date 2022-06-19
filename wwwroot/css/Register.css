@@ -1,0 +1,21 @@
+﻿
+.form-control {
+    /*box-shadow: 0px 5px 10px 2px rgba(200, 254, 254, 0.81) !important;*/
+    border: none;
+}
+
+#registerSubmit {
+    box-shadow: 0px 5px 10px 2px rgba(200, 254, 254, 0.81) !important;
+}
+
+#LogInSubmit {
+    box-shadow: 0px 5px 10px 2px rgba(200, 254, 254, 0.81) !important;
+}
+
+.form-control:focus,
+.form-control::after {
+    box-shadow: none;
+    border: none;
+}
+
+

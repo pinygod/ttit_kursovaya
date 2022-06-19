@@ -1,0 +1,100 @@
+html {
+  font-size: 14px;
+}
+
+body {
+    background-image: url(../img/1581998648_geometric_vsthemes_ru-37.png);
+}
+
+.logo{
+    width:4%;
+    z-index: 1;
+}
+
+.mainContainer {
+    background-color: #212529 !important;
+    box-shadow: 0px 5px 10px 2px rgb(153, 208, 255) !important;
+    color: #cdcdcd;
+}
+
+.inputFields {
+    background-color: #cdcdcd;
+}
+
+.form-control {
+    background-color: #cdcdcd;
+}
+
+.form-control {
+    background-color: #cdcdcd;
+}
+
+@media (min-width: 768px) {
+    html {
+    font-size: 16px;
+  }
+}
+
+footer {
+    box-shadow: 0px 33px 11px -29px rgba(205, 205, 205, 1) inset !important;
+    background-color: #212529 !important;
+}
+
+a{
+    text-decoration:none !important;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+button:focus, .btn:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.siteName:hover {
+    text-shadow: 4px 4px 2px rgb(153, 208, 255) !important;
+}
+
+.navLinks {
+    color: #ffffff;
+}
+
+.navLinks:hover{
+    color: #ff0000;
+}
+
+.navbar {
+    box-shadow: 0px -33px 11px -29px rgb(153, 208, 255)inset !important;
+}
+
+.btnSubmit {
+    box-shadow: 0px 5px 10px 2px rgba(200, 254, 254, 0.81) !important;
+}
+
+.manageNav {
+    color: #cac9c9;
+}
+
+
+.manageNav:hover {
+    color: rgba(200, 254, 254, 0.81);
+}
+
+.tags {
+    text-decoration: none;
+    cursor: default;
+}
+
+div {
+    cursor: default;
+}
+.tags:hover {
+    color: rgba(200, 254, 254, 0.81);
+}

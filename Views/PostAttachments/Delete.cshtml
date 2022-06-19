@@ -1,0 +1,38 @@
+﻿@model kekes.Data.Models.PostAttachment
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="mainContainer col-9 p-2 border rounded ps-3 pe-3 pb-2">
+    <h3>Вы действительно хотите удалить эту картинку?</h3>
+       <div>
+           <hr />
+           <dl class="dl-horizontal">
+               <dt>
+                   Дата публикации
+               </dt>
+               <dd>
+                   @Html.DisplayFor(model => model.Created)
+               </dd>
+               <dd>
+                   <div class="row d-flex justify-content-center">
+                       <div class="col-sm-6 col-md-4">
+                           <div class="">
+                               <img src="@Model.Path" alt="Image" class="img-fluid rounded" />
+                           </div>
+                       </div>
+                   </div>
+               </dd>
+               
+           </dl>
+           
+           <form asp-action="Delete">
+               <div class="form-actions no-color d-flex justify-content-between">
+                   <input type="submit" value="Удалить" class="btnDeleteAttachment btn btn-danger" /> 
+                   <a asp-action="Details" asp-controller="Posts" asp-route-id="@Model.PostId" class="text-secondary m-0 p-0 pt-3">Вернуться к посту</a>
+               </div>
+           </form>
+       </div>
+</div>
+

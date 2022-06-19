@@ -1,0 +1,35 @@
+﻿@model PostAttachmentEditModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="mainContainer col-9 p-2 border rounded ps-3 pe-3 pb-2">
+    <h2>Добавить вложение</h2>
+    <form asp-action="Create" asp-route-postId="@ViewBag.Post.Id" enctype="multipart/form-data">
+    <div class="form-horizontal">
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="File" class="col-md-2 control-label mb-2"></label>
+            <div class="col-md-10">
+                <input type="file" asp-for="File" class="form-control" />
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group mt-4">
+            <div class="col-md-offset-2  d-flex justify-content-between">
+                <input type="submit" value="Добавить" class="btnCreateNewPost btn btn-dark" />
+                <a asp-action="Details" asp-controller="Posts" asp-route-id="@ViewBag.Post.Id" class="text-secondary m-0 pt-3">Вернуться к посту</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
